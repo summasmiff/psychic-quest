@@ -1,3 +1,7 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://coffeescript.org/
+$ ->
+  $('.catchphrase[data-url]').each ->
+    container = this
+    $.getJSON this.getAttribute('data-url'), (response) ->
+      if response.catchphrase && response.catchphrase.length > 0
+        container.innerHTML = response.catchphrase
+        container.closest('.container').style.display = 'inline-block'

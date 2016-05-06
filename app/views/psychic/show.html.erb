@@ -1,2 +1,54 @@
-<h1>Psychic#show</h1>
-<p>Find me in app/views/psychic/show.html.erb</p>
+<div class="psychic">
+  <%= @psychic.name %><br>
+  <span>Astral color:</span> <%= @psychic.color %>
+</div>
+
+<h2>CELESTIAL ACTIONS</h2>
+
+<button type="button" class="cast-spell" data-url="<%= cast_spell_path(@psychic) %>">
+  Cast Spell ⭐️
+</button>
+
+<button type="button" class="see-future" data-url="<%= see_future_path(@psychic) %>">
+  See Future 👀
+</button>
+
+<hr>
+
+<div id="angry-response" style="display: none">
+  <h2>THE SPIRITS ARE DISPLEASED</h2>
+  <hr>
+</div>
+
+<div id="spell-results" style="display: none">
+  <h2>STIRRINGS ON THE ASTRAL PLANE</h2>
+  <p id="result"></p>
+  <hr>
+</div>
+
+<div id="prediction" style="display: none">
+  <h2>EIGHT BALL SAYS...</h2>
+  <p id="prediction-result"></p>
+  <hr>
+</div>
+
+<h2>FAMILIARS</h2>
+
+<dl class="familiars">
+  <% Familiar.all.each do |familiar| %>
+    <dt><%= familiar.name %></dt>
+    <dd>
+      is a <%= familiar.species %>
+      <span class="container" style="display: none">
+        &mdash; Latest Tweet 🤔:
+        <span class="catchphrase" data-url="<%= catchphrase_path(familiar) %>"></span>
+      </span>
+    </dd>
+  <% end %>
+</dl>
+
+<p class="return-link">
+  <%= link_to root_path do %>
+    &larr; Psychics
+  <% end %>
+</p>

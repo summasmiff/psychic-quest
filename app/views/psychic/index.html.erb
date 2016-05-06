@@ -1,0 +1,15 @@
+<h1>🎀 PSYCHIC OF THE DAY 🎀</h1>
+
+<div class="psychic">
+  <%= link_to (psychic = @psychics.first).name, psychic %><br>
+  <span>Astral color:</span> <%= psychic.color %>
+</div>
+
+<h2>LESS OPULENT BEINGS 😒</h2>
+
+<% @psychics.drop(1).each do |psychic| %>
+  <div class="sub-psychic">
+    <%= link_to psychic.name, psychic %><br>
+    <span>Astral color:</span> <%= psychic.color %>
+  </div>
+<% end %>

@@ -1,3 +1,128 @@
-// Place all the styles related to the Psychic controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+@import url(https://fonts.googleapis.com/css?family=Oregano:400);
+@import url(https://fonts.googleapis.com/css?family=Merriweather+Sans:400);
+
+body {
+  background-color: #464866;
+  color: #fff;
+  font-family: "Merriweather Sans", sans-serif;
+  font-weight: 400;
+}
+
+h1, h2 {
+  color: #C76F6C;
+}
+
+@-webkit-keyframes color_change {
+  from { color: #F18783; }
+  to { color: #FFB295; }
+}
+@-moz-keyframes color_change {
+  from { color: #F18783; }
+  to { color: #FFB295; }
+}
+@-ms-keyframes color_change {
+  from { color: #F18783; }
+  to { color: #FFB295; }
+}
+@-o-keyframes color_change {
+  from { color: #F18783; }
+  to { color: #FFB295; }
+}
+@keyframes color_change {
+  from { color: #F18783; }
+  to { color: #FFB295; }
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
+
+  &:hover, &:focus {
+    -webkit-animation: color_change 0.3s infinite ease-in-out;
+    -moz-animation: color_change 0.3s infinite ease-in-out;
+    -ms-animation: color_change 0.3s infinite ease-in-out;
+    -o-animation: color_change 0.3s infinite ease-in-out;
+    animation: color_change 0.3s infinite ease-in-out;
+  }
+}
+
+.psychic {
+  font-family: "Oregano", sans-serif;
+  font-size: 72px;
+  margin-bottom: 80px;
+
+  span {
+    color: #FFB295;
+  }
+}
+
+.sub-psychic {
+  font-size: 36px;
+
+  span {
+    color: #F18783;
+  }
+
+  + .sub-psychic {
+    margin-top: 40px;
+  }
+}
+
+.familiars {
+  dt {
+    font-family: "Oregano", sans-serif;
+    font-size: 42px;
+  }
+
+  dd {
+    margin-left: 0;
+  }
+
+  dd + dt {
+    margin-top: 20px;
+    border-top: 1px solid #AF8DAC;
+    padding-top: 20px;
+  }
+}
+
+.return-link {
+  margin-top: 80px;
+  font-size: 12px;
+}
+
+hr {
+  border: 1px solid #AF8DAC;
+  border-bottom: none;
+  margin: 40px 0;
+}
+
+button {
+  display: inline-block;
+  padding: 6px 12px;
+  margin-bottom: 0;
+  font-size: 34px;
+  font-family: "Oregano", sans-serif;
+  font-weight: 400;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-image: none;
+  border: 1px solid #C76F6C;
+  border-radius: 4px;
+  color: #464866;
+  background-color: #FFB295;
+
+  &:disabled {
+    background-color: #C76F6C;
+    color: #F18783;
+  }
+}
