@@ -1,0 +1,2 @@
+module PsychicHelper
+end
