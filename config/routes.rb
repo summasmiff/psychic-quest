@@ -15,13 +15,13 @@ Rails.application.routes.draw do
 
   get 'psychic/new'
 
-  get 'psychic/:id/show' => 'psychic#show'
+  get 'psychic/:id/show' => 'psychic#show', :as => :psychic
 
   get 'psychic/:id/update' => 'psychic#update'
 
-  get 'psychic/:id/see_future' => 'psychic#see_future'
+  get 'psychic/:id/see_future' => 'psychic#see_future', :as => :see_future
 
-  get 'psychic/:id/cast_spell' => 'psychic#cast_spell'
+  get 'psychic/:id/cast_spell' => 'psychic#cast_spell', :as => :cast_spell
 
   get 'familiar/new'
 
@@ -29,7 +29,7 @@ Rails.application.routes.draw do
 
   get 'familiar/:id/update' => 'familiar#update'
 
-  get 'familiar/:id/catchphrase' => 'familiar#catchphrase'
+  get 'familiar/:id/catchphrase' => 'familiar#catchphrase', :as => :catchphrase
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
