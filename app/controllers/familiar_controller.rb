@@ -18,7 +18,7 @@ class FamiliarController < ApplicationController
   end
 
   def catchphrase
-    render json: "Boy I am having a #{@familiar.personality} day today!"
+    render json: {:catchphrase => "Boy I am having a #{@familiar.personality} day today!"}
   end
 
   def set_familiar

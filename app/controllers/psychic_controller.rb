@@ -19,19 +19,21 @@ class PsychicController < ApplicationController
   end
 
   def see_future
+    beverages = Beverage.all
     if beverages.present?
       bev = beverages.first
-      render :json, "#{@psychic.name} is having a #{bev.flavor} vision of the future"
+      render :json => {:prediction => "#{@psychic.name} is having a #{bev.flavor} vision of the future"}
       bev.destroy!
     end
     return
   end
 
   def cast_spell
+    familiars = Familiar.all
     if familiars.present?
-      fam = familiar.first
-      render :json, "With the help of #{fam.name}," +
-                    " #{@psychic.name} waves her wand mysteriously"
+      fam = familiars.first
+      render :json => {:spell => "With the help of #{fam.name}," +
+                    " #{@psychic.name} waves her wand mysteriously"}
     end
     return
   end
